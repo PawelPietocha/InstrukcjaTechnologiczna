@@ -1,0 +1,130 @@
+﻿@page
+@model InstrukcjaTechnologiczna.ArkuszModel  
+@{
+    ViewData["Title"] = "Arkusz";
+}
+<style>
+    .ramka {
+        border:solid;
+        width:10%;
+        height:10%;
+        display:inline-block;
+    }
+   .table th {
+       border:solid;
+       text-align:center;
+      
+       }
+   .table td {
+       border:solid;
+       height:50px;
+
+   }
+</style>
+
+<table class="table">
+    <thead>
+        <tr>
+        <td>ZST </td>
+        <td style="width:40%">INSTRUKCJA TECHNOLOGICZNA TT</td>
+        <td style="width:15%">Ilość zlecona <input style="width:100%"/></td>
+        <td style="width:10%">zlec.Nr <input style="width:100%"/></td>
+        <td style="width:3%" ><input style="width:200%"/></td>
+        <td style="width:3%"><input style="width:200%"/></td>
+        <td style="width:3%"><input style="width:200%"/></td>
+        <td style="width:3%"><input style="width:200%"/></td>
+        </tr>
+    </thead>
+    <tr>
+        <td>Radom</td>
+        <td>Nazwa wyrobu <input style="width:100%"/></td>
+        <td>Ilość wyjściowa <input style="width:100%" /></td>
+        <td>rys.Nr <input style="width:100%" /></td>
+        <td><input style="width:200%"/></td>
+        <td><input style="width:200%"/></td>
+        <td><input style="width:200%"/></td>
+        <td><input style="width:200%"/></td>
+    </tr>
+
+</table>
+
+<div class="ramka">ZST Radom</div>
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr style="border:solid">
+            <th colspan="8">Jednostkowe normy materiałowe dla ilości wyjściowej</th>
+            <th colspan="4">Materiały do zlecenia</th>
+        </tr>
+    </thead>
+    <thead>
+        <tr style="border:solid">
+            <th style="width:3%"> Det</th>
+            <th style="width:15%"> Rodzaj-Nazwa</th>
+            <th style="width:15%"> Cecha</th>
+            <th style="width:5%">Wymiary</th>
+            <th style="width:3%">Ilość</th>
+            <th style="width:3%">Jedn.miary</th>
+            <th style="width:3%">szt</th>
+            <th style="width:15%">Inne zalecenia</th>
+            <th style="width:3%">Ilość</th>
+            <th style="width:3%">Jedn.miary</th>
+            <th style="width:3%">szt.</th>
+            <th style="width:5%">Rw nr</th>
+        </tr>
+    </thead>
+    @for (int i = 1; i <= 3; i++)
+    {
+        <tr style="border:solid">
+            <td> <input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+            <td><input style="width:100%" /></td>
+        </tr>
+    }
+
+</table>
+<table class="table">
+    <thead>
+        
+        <tr style="border:solid">
+            <th style="width:5%">nr oper.</th>
+            <th style="width:20%">Treść operacji</th>
+            <th style="width:10%">Obrabiarka</th>
+            <th style="width:10%">Uchwyt</th>
+            <th style="width:10%">Narzędzie</th>
+            <th style="width:10%">Sprawdzian</th>
+            <th style="width:20%">Uwagi</th>
+        </tr>
+    </thead>
+    
+    @for(int i=1; i<=11; i++) 
+    {
+        <tr style="border:solid">
+            <td> <input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+            <td><input style="width:100%"/></td>
+        </tr>
+    }
+    
+
+</table>
+<button onclick="window.print()">Drukuj</button>
+
+

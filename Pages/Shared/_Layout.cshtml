@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InstrukcjaTechnologiczna</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+
+
+        .Main ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .Main li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: #111;
+                }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="Main">
+        <ul>
+            <li><a asp-area="" asp-page="/Index">Strona główna</a></li>
+            <li><a asp-area="" asp-page="/FObrabiarki/ObrabiarkiView">Obrabiarki</a></li>
+            <li><a asp-area="" asp-page="/Uchwyty/UchwytView">Uchwyty</a></li>
+            <li><a asp-area="" asp-page="/Narzedzia/NarzedzieView">Narzędzia</a></li>
+            <li><a asp-area="" asp-page="/PomoceMierniczeISpr/Pomoce">Pomoce miernicze i sprawdziany</a></li>
+            <li style="float:right"><a class="active" asp-area="" asp-page="/Arkusz">Instrukcja Technologiczna- Arkusz do pobrania</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color:black">
+        <div class="container" style="color:white">
+            &copy; 2020 - InstrukcjaTechnologiczna - <a href="https://www.zst-radom.edu.pl/">ZST Radom</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

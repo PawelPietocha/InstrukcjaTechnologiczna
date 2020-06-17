@@ -1,0 +1,60 @@
+﻿@page
+@model InstrukcjaTechnologiczna.NarzedzieViewModel
+@{
+    ViewData["Title"] = "NarzedzieView";
+}
+    <head>
+        <script src="https://kit.fontawesome.com/06d2fabce8.js" crossorigin="anonymous"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="~/css/MainStyle.css" />
+
+
+    </head>
+<h1 style="text-align:center">Narzędzia</h1>
+
+
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" placeholder="Wyszukaj po nazwie" asp-for="SearchByName" class="przyciskwyszukania" />
+            <span class="input-group-btn">
+                <button class="btn btn-default"><i class="fas fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div class="input-group">
+        <select class="przyciskwyszukania" asp-for="SearchByType"
+                asp-items="Model.Rodzaje">
+        </select>
+        <span class="input-group-btn">
+            <button class="btn btn-default"><i class="fas fa-search"></i></button>
+        </span>
+    </div>
+
+
+
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Rodzaj</th>
+            <th>Grupa Narzędzi</th>
+            <th>Kliknij aby wejść w szczegóły</th>
+        </tr>
+    </thead>
+    @foreach (var narzedzie in Model.Narzedzia)
+    {
+        <tr>
+            <td>@narzedzie.rodzajNarzedzia</td>
+            <td>@narzedzie.GrupaNarzedzi</td>
+            <td>
+                <a href=~/@narzedzie.FilePath><i class="fas fa-info-circle"></i> </a>
+            </td>
+
+
+
+        </tr>
+    }
+</table>
